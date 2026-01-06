@@ -1,20 +1,11 @@
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
-
 import AppRouter from "./router/AppRouter";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-      <Navbar />
-
-      {/* All pages load here */}
-      <div style={{ flex: 1 }}>
-        <AppRouter/>
-      </div>
-
-      <Footer />
-    </div>
+    <MainLayout>
+      <AppRouter />
+    </MainLayout>
   );
 }
 
