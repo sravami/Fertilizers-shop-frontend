@@ -1,16 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 
-export default function AppRouter() {
+const AppRouter = () => {
   return (
-    <Router>
-      <Routes>
-        {/* Root path shows Products page */}
-        <Route path="/" element={<Products />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-      </Routes>
-    </Router>
+    <Routes>
+      {/* Home */}
+      <Route path="/" element={<Home />} />
+
+      {/* Static pages */}
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+
+      {/* Products */}
+      <Route path="/products" element={<Products />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
+    </Routes>
   );
-}
+};
+
+export default AppRouter;
